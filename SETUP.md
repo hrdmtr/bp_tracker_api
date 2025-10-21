@@ -56,6 +56,8 @@ SUPABASE_KEY=your-supabase-anon-key-here
 
 ### 4. Supabaseテーブル作成
 
+**詳細な手順は[Supabaseセットアップガイド](docs/SUPABASE_SETUP.md)を参照してください。**
+
 Supabaseのダッシュボードにアクセスして、`supabase_schema.sql`のSQLを実行：
 
 ```sql
