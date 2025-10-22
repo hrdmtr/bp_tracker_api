@@ -20,8 +20,10 @@ class CustomJSONFormatter(json_log_formatter.JSONFormatter):
         self, message: str, extra: dict[str, Any], record: logging.LogRecord
     ) -> dict[str, Any]:
         """ログレコードをJSON形式に変換"""
+        from datetime import datetime, timezone
+
         json_record = {
-            "timestamp": self.format_timestamp(record.created),
+            "timestamp": datetime.fromtimestamp(record.created, tz=timezone.utc).isoformat(),
             "level": record.levelname,
             "message": message,
             "logger": record.name,
